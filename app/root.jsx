@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   Meta,
   Outlet,
@@ -6,6 +7,7 @@ import {
 } from "@remix-run/react";
 
 export default function App() {
+  console.log("Executing root.jsx's default export")
   return (
     <html>
     <head>
@@ -18,6 +20,10 @@ export default function App() {
     </head>
     <body>
     <h1>Hello world!</h1>
+    <ul>
+      <li><Link to={'route1'}>Route 1</Link></li>
+      <li><Link to={'route2'}>Route 2</Link></li>
+    </ul>
     <Outlet />
 
     <Scripts />
