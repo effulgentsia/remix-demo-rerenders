@@ -1,3 +1,4 @@
+import { json } from "@remix-run/node";
 import {
   Link,
   Links,
@@ -5,6 +6,12 @@ import {
   Outlet,
   Scripts,
 } from "@remix-run/react";
+
+export const loader = async () => {
+  console.log("Executing root.jsx's loader");
+  const data = "Some data for App";
+  return json({ data });
+};
 
 export default function App() {
   console.log("Executing root.jsx's default export")
