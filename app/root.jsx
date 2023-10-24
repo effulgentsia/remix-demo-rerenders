@@ -5,6 +5,7 @@ import {
   Meta,
   Outlet,
   Scripts,
+  useLoaderData,
 } from "@remix-run/react";
 
 export const loader = async () => {
@@ -15,6 +16,7 @@ export const loader = async () => {
 
 export default function App() {
   console.log("Executing root.jsx's default export")
+  const { data } = useLoaderData();
   return (
     <html>
     <head>
@@ -27,6 +29,7 @@ export default function App() {
     </head>
     <body>
     <h1>Hello world!</h1>
+    <h2>{data}</h2>
     <ul>
       <li><Link to={'route1'}>Route 1</Link></li>
       <li><Link to={'route2'}>Route 2</Link></li>

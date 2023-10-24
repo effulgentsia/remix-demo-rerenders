@@ -1,4 +1,5 @@
 import {json} from "@remix-run/node";
+import {useLoaderData} from "@remix-run/react";
 
 export const loader = async () => {
   console.log("Executing route1's loader");
@@ -8,5 +9,6 @@ export const loader = async () => {
 
 export default function Route() {
   console.log("Executing route1's default export")
-  return <div>Route 1's content</div>
+  const { data } = useLoaderData();
+  return <div>Route 1's content: {data}</div>
 }
